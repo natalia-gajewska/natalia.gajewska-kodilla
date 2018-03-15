@@ -20,9 +20,9 @@ public class TestingMain {
         int addResult = calculator.add(5, 25);
         int subResult = calculator.subtract(100, 30);
 
-        if (addResult == 30) && (subResult == 70); {
+        if (addResult == 30 && subResult == 70) {
 
-            System.out.println("IS OK");
+            System.out.println("Calculator działa:)");
         } else {
             System.out.println("Error");
         }
