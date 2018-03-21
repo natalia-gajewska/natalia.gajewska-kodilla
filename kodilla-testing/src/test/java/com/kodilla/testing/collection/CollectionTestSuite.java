@@ -1,48 +1,39 @@
 package com.kodilla.testing.collection;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CollectionTestSuite {
 
     @Before
-    public void before(){
+    public void before() {
         System.out.println("Test Case: begin");
     }
+
     @After
-    public void after(){
+    public void after() {
         System.out.println("Test Case: end");
     }
 
     @Test
-    public void testOddNumbersExterminatorEmptyList(){
+    public void testOddNumbersExterminator() {
 
         ArrayList<Integer> evenNumbers = new ArrayList<>();
+        OddNumbersExterminator oddNumbersExterminator = new OddNumbersExterminator();
 
-     int resultEmpty = evenNumbers.add();
+        evenNumbers.add(2);
+        evenNumbers.add(6);
+        evenNumbers.add(8);
+        evenNumbers.add(12);
+        evenNumbers.add(15);
 
-
-     if (resultEmpty == null) {
-         System.out.println("Jest OK");
-     } else {
-         System.out.println("Test źle wykonany");
-
-     }
-
-     public void testOddNumbersExterminatorNormalList(){
-
-         ArrayList<Integer> evenNumbers = new ArrayList<>();
-
-         int resultFull = evenNumbers.add(2,6,8,12,15);
-
-         if (resultFull % 2 == 0);
-            System.out.println("Jest OK");
-        } else {
-            System.out.println("Test źle wykonany");
-        }
+        List<Integer> result = oddNumbersExterminator.getEvenNumbers(evenNumbers);
+        Assert.assertEquals(result.size(), 4);
 
     }
 }
