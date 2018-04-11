@@ -1,28 +1,29 @@
 package com.kodilla.testing.shape;
 
 import java.util.ArrayList;
+import java.util.List;
 
 class ShapeCollector {
 
+   private ArrayList<Shape> shapes = new ArrayList<Shape>();
 
-    ArrayList<String> shape = new ArrayList<String>();
+   public List<Shape> getShapes(){
+       return shapes; //tworzenie getter
+   }
 
-    int field; //pole
-    String shapeName;
-
-    public void addFigure(Shape shape) {
-    }
-
+    public void addFigure(Shape figura) {
+        shapes.add(figura);
+    } //typ, nazwa, testujemy metody tylko publiczne
 
     public void removeFigure(Shape shape) {
+        shapes.remove(shape);
+    } //dodajemy do listy pozniej usuwamy i srawdzamy czy lista jest pusta.
 
+    public Shape getFigure(int n) {
+        return shapes.get(0);
     }
 
-    public int getFigure(int n) {
-        return field;
-    }
-
-    public void showFigure() {
-
+    public String showFigure() {
+        return shapes.toString();
     }
 }

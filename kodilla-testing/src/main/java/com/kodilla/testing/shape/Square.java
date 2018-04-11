@@ -2,8 +2,8 @@ package com.kodilla.testing.shape;
 
 public class Square implements Shape {
 
-    int field; //pole
-    String shapeName;
+    private int field; //pole
+    private String shapeName; // zawsze prywatne
 
     public String getShapeName() {
         return shapeName;

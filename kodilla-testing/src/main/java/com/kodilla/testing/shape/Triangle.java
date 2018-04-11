@@ -2,8 +2,8 @@ package com.kodilla.testing.shape;
 
 class Triangle implements Shape {
 
-    int field; //pole
-    String shapeName;
+    private int field; //pole
+    private String shapeName;
 
     public String getShapeName() {
         return shapeName;
