@@ -27,7 +27,7 @@ public class MyStatistics {
             this.averageNumberOfCommentPerUser = (double) numberOfComment / numberOfUsers;
         }
 
-        if (numberOfComment > 0) if ( numberOfPost > 0) {
+        if (numberOfComment>0 && numberOfPost>0) {
             this.averageNumberOfCommentPerPost = (double) numberOfComment / numberOfPost;
         }
     }
