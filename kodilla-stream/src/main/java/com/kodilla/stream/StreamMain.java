@@ -1,11 +1,13 @@
 package com.kodilla.stream;
 
-import com.kodilla.stream.beautifier.PoemBeautifier;
-import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.ExpressionExecutor;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
-public class StreamMain {
+import java.util.Map;
+import java.util.stream.Collectors;
+/*
+
+public class StreamMain2 {
     public static void main(String[] args) {
         ExpressionExecutor expressionExecutor = new ExpressionExecutor();
 
@@ -22,4 +24,4 @@ public class StreamMain {
         expressionExecutor.executeExpression(3, 4, FunctionalCalculator::divideAByB);
     }
 }
-
+*/
