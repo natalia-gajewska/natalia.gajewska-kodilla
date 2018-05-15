@@ -1,4 +1,4 @@
-package singleton;
+package patterns.singleton;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,7 +6,7 @@ import patterns.singleton.Logger;
 
 public class LoggerTestSuite {
     @Test
-    public void getLastLogTest(){
+    public void getLastLogTest() {
         //Given
         Logger.getInstatnce().log("Singleton");
         //When
@@ -14,5 +14,4 @@ public class LoggerTestSuite {
         //Then
         Assert.assertEquals("Singleton", lastLog);
     }
-
 }
