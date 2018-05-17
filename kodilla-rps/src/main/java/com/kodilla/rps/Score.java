@@ -1,13 +1,13 @@
 package com.kodilla.rps;
 
-public class Score {
+public class Score { //klasa punkty
 
-    private Game player1;
+    private Game player1; //pola
     private ComputerPlayer player2;
     private int wantedRounds;
     private StageGame stageGame;
 
-    public Score (Game player1, ComputerPlayer player2, int wantedRounds) {
+    public Score (Game player1, ComputerPlayer player2, int wantedRounds) { //konstruktor punkty
         this.player1 = player1;
         this.player2 = player2;
         this.wantedRounds = wantedRounds;
@@ -37,12 +37,12 @@ public class Score {
 
         } else if (playerTwoBeatsPlayerOne(p1Move, p2Move)) {
             stageGame.addPointPlayer2();
-            System.out.println("Computer wins. Not so bright, are we?");
+            System.out.println("Computer wins");
 
 
         } else if (playerOneBeatsPlayerTwo(p1Move, p2Move)) {
             stageGame.addPointPlayer1();
-            System.out.println("Well, you managed to beat the machine. You must be a genius of some sort.");
+            System.out.println("You managed to defeat the computer. You're doing great");
 
 
         } else if (p1Move.equals("n")) {
@@ -51,7 +51,7 @@ public class Score {
 
         } else if (p1Move.equals("x")) {
             stageGame.numberOfRounds = wantedRounds;
-            System.out.println("Game has been terminated.");
+            System.out.println("End Game.");
         }
         return stageGame;
     }

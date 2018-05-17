@@ -1,7 +1,6 @@
 package com.kodilla.rps;
 
-public interface Game {
-    String getName();
-    String makeMove();
-
+public interface Game { //interfejs gra
+    String getName(); //daj imię
+    String makeMove(); //wykonaj ruch
 }

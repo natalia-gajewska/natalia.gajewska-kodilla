@@ -2,22 +2,22 @@ package com.kodilla.rps;
 
 import java.util.Scanner;
 
-public class RpsRunner {
+public class RpsRunner { //rps z metodą main
 
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What is your name?");
+        System.out.println("What is your name?"); //początek zapytanie o imię
         String playerName = scanner.nextLine();
 
         Player player1 = new Player(playerName);
 
         ComputerPlayer computer = new ComputerPlayer();
 
-        System.out.println("How many rounds do we play?");
+        System.out.println("How many rounds we play?");
         int wantedRounds = scanner.nextInt();
 
-        Score score = new Score(player1, computer, wantedRounds);
+        Score score = new Score(player1, computer,wantedRounds );
         System.out.println("Keyboard shortcuts:\n" +
                 "1 - rock\n" +
                 "2 - paper\n" +

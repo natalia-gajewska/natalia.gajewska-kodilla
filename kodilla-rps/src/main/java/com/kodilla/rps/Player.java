@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Player implements Game {
+public class Player implements Game { //klasa Gracz implementuje interfejs gra
 
-    private String name;
-    private List prepareAvailableMoves() {
-        List<String> availableMoves = new ArrayList<>();
-        availableMoves.add("1");
-        availableMoves.add("2");
-        availableMoves.add("3");
-        availableMoves.add("x");
-        availableMoves.add("n");
-        return availableMoves;
+    private String name; //pola
+    private List prepareTheMove() {
+        List<String> theMoves = new ArrayList<>();
+        theMoves.add("1");
+        theMoves.add("2");
+        theMoves.add("3");
+        theMoves.add("x");
+        theMoves.add("n");
+        return theMoves;
     }
 
     public Player(String name) {
 
         this.name = name;
-        prepareAvailableMoves();
+        prepareTheMove();
     }
 
     @Override
@@ -34,7 +34,7 @@ public class Player implements Game {
         Scanner scanner = new Scanner(System.in);
         System.out.println("What is your move?");
         String playerMove = scanner.nextLine();
-        while (!(prepareAvailableMoves().contains(playerMove))){
+        while (!(prepareTheMove().contains(playerMove))){
 
             System.out.println("Wrong number. You have to type 1, 2, or 3.");
 

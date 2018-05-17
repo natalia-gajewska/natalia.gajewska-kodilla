@@ -1,6 +1,6 @@
 package com.kodilla.rps;
 
-public class StageGame {
+public class StageGame { //klasa etap gry
 
     private int player1Points;
     private int player2Points;
