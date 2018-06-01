@@ -6,15 +6,9 @@ import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
-@NamedNativeQuery(
-        name = "Company.findByThreeCharsPrefix",
-        query = "SELECT * FROM COMPANIES" +
-                " WHERE SUBSTRING(COMPANY_NAME, 1, 3) = :PREFIX",
+@NamedNativeQuery( name = "Company.retrieveCompaniesWithNameEqual",
+        query = "SELECT * FROM Companies WHERE COMPANY_NAME LIKE:COMPANY_NAME",
         resultClass = Company.class
-)
-@NamedQuery(
-        name = "Company.findByFewLetters",
-        query = "FROM Company WHERE name LIKE :ARG"
 )
 @Entity
 @Table(name = "COMPANIES")
@@ -51,7 +45,6 @@ public class Company {
     private void setName(String name) {
         this.name = name;
     }
-
     @ManyToMany(cascade = CascadeType.ALL, mappedBy = "companies")
     public List<Employee> getEmployees() {
         return employees;
