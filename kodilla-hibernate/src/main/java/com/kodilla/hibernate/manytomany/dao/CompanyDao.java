@@ -11,8 +11,8 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface CompanyDao extends CrudRepository<Company, Integer> {
-    @Query(nativeQuery = true)
-    List<Company> retrieveCompaniesWithNameEqual(@Param("COMPANY_NAME")String companyName);
+public interface CompanyDao extends CrudRepository<Company, Integer>{
 
+    @Query(nativeQuery = true)
+    List<Company> retrieveCompaniesByPhrase(@Param("PHRASE") String phrase);
 }

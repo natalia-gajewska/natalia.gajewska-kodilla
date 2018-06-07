@@ -9,4 +9,6 @@ include 'kodilla-rps'
 include 'kodilla-rps2'
 include 'natalia'
 findProject(':natalia')?.name = 'natalia '
+include 'kodilla-jdbc'
+include 'kodilla-jdbc'
 
