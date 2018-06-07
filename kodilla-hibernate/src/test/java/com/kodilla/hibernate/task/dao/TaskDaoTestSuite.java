@@ -1,5 +1,6 @@
 package com.kodilla.hibernate.task.dao;
 
+
 import com.kodilla.hibernate.task.Task;
 import com.kodilla.hibernate.task.TaskFinancialDetails;
 import org.junit.Assert;
@@ -36,6 +37,23 @@ public class TaskDaoTestSuite {
         taskDao.delete(id);
     }
 
+    @Test
+    public void testTaskDaoFindByDuration() {
+        //Given
+        Task task = new Task(DESCRIPTION, 7);
+        taskDao.save(task);
+        int duration = task.getDuration();
+
+        //When
+        List<Task> readTasks = taskDao.findByDuration(duration);
+
+        //Then
+        Assert.assertEquals(1, readTasks.size());
+
+        //CleanUp
+        int id = readTasks.get(0).getId();
+        taskDao.delete(id);
+    }
 
     @Test
     public void testTaskDaoSaveWithFinancialDetails() {
