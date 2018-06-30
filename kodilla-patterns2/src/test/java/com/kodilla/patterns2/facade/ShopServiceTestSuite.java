@@ -12,13 +12,29 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import java.math.BigDecimal;
 
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class ShopServiceTestSuite {
     @Autowired
     private ShopService shopService;
     @Autowired
-    private OrderFacade orderFacade;
+    OrderFacade orderFacade;
+
+    @Test
+    public void testShopFacade(){
+        OrderDto order = new OrderDto();
+        order.addItem(new ItemDto(10L, 2));
+        order.addItem(new ItemDto(216L, 1));
+        order.addItem(new ItemDto(25L, 1));
+        order.addItem(new ItemDto(11L, 3));
+        try {
+            orderFacade.processOrder(order, 1L);
+        } catch (OrderProcessingException e){
+            // business exeception - should be handled in real application
+        }
+    }
+
     @Test
     public void testShopServiceSubmitOrder() {
         long orderId = shopService.openOrder(1L);
@@ -60,20 +76,6 @@ public class ShopServiceTestSuite {
             }
         } else {
             System.out.println("Access denied. User is not authenticated.");
-        }
-    }
-
-    @Test
-    public void testShopFacade() {
-        OrderDto order = new OrderDto();
-        order.addItem(new ItemDto(10L, 2));
-        order.addItem(new ItemDto(216L, 1));
-        order.addItem(new ItemDto(25L, 1));
-        order.addItem(new ItemDto(11L, 3));
-        try {
-            orderFacade.processOrder(order, 1L);
-        } catch (OrderProcessingException e) {
-            // business exception - should be handled in real application
         }
     }
 }

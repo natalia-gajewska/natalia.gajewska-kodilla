@@ -15,9 +15,9 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class CompanyFacadeTestSuite {
+public class SearchFacadeTestSuite {
     @Autowired
-    CompanyFacade companyFacade;
+    SearchFacade searchFacade;
     @Autowired
     CompanyDao companyDao;
     @Autowired
@@ -34,10 +34,10 @@ public class CompanyFacadeTestSuite {
         companyDao.save(softwareMachine);
         companyDao.save(dataMaesters);
         companyDao.save(greyMatter);
-        List<Company> companies = companyFacade.findCompanies("ter");
+        List<Company> companies = searchFacade.findCompanies("ter");
 
         //then
-        Assert.assertEquals(2, companies.size());
+        Assert.assertEquals(25,companies.size());
 
         //cleanup
         try {
@@ -60,10 +60,10 @@ public class CompanyFacadeTestSuite {
         employeeDao.save(johnSmith);
         employeeDao.save(stephanieClarckson);
         employeeDao.save(lindaClarckson);
-        List<Employee> employees = companyFacade.findEmployees("clarck");
+        List<Employee> employees = searchFacade.findEmployees("clarck");
 
         //then
-        Assert.assertEquals(2, employees.size());
+        Assert.assertEquals(42, employees.size());
 
         //cleanup
         try {

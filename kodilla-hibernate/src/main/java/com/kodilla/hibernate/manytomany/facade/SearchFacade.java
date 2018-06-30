@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class CompanyFacade {
+public class SearchFacade {
     @Autowired
     private CompanyDao companies;
     @Autowired
