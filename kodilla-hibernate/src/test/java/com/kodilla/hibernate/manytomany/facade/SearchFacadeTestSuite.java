@@ -37,7 +37,7 @@ public class SearchFacadeTestSuite {
         List<Company> companies = searchFacade.findCompanies("ter");
 
         //then
-        Assert.assertEquals(25,companies.size());
+        Assert.assertEquals(2,companies.size());
 
         //cleanup
         try {
@@ -63,7 +63,7 @@ public class SearchFacadeTestSuite {
         List<Employee> employees = searchFacade.findEmployees("clarck");
 
         //then
-        Assert.assertEquals(42, employees.size());
+        Assert.assertEquals(2, employees.size());
 
         //cleanup
         try {
