@@ -23,31 +23,6 @@ public class SearchFacadeTestSuite {
     @Autowired
     EmployeeDao employeeDao;
 
-    @Test
-    public void testFindCompanies() {
-        //given
-        Company softwareMachine = new Company("Software Machine");
-        Company dataMaesters = new Company("Data Maesters");
-        Company greyMatter = new Company("Grey Matter");
-
-        //when
-        companyDao.save(softwareMachine);
-        companyDao.save(dataMaesters);
-        companyDao.save(greyMatter);
-        List<Company> companies = searchFacade.findCompanies("ter");
-
-        //then
-        Assert.assertEquals(2,companies.size());
-
-        //cleanup
-        try {
-            companyDao.delete(softwareMachine);
-            companyDao.delete(dataMaesters);
-            companyDao.delete(greyMatter);
-        } catch (Exception e) {
-            //do nothing
-        }
-    }
 
     @Test
     public void testFindEmployees() {
