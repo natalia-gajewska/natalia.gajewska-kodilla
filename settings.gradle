@@ -11,4 +11,8 @@ include 'natalia'
 findProject(':natalia')?.name = 'natalia '
 include 'kodilla-jdbc'
 include 'kodilla-jdbc'
+include 'kodilla-testing2'
+include 'kodilla-testing2'
+include 'kodilla-testing2'
+include 'kodilla-testing2'
 

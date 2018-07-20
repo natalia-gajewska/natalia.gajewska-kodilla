@@ -1,6 +1,7 @@
 package com.kodilla.hibernate.manytomany.dao;
 
 import com.kodilla.hibernate.manytomany.Company;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -10,10 +11,11 @@ import java.util.List;
 
 @Transactional
 @Repository
-public interface CompanyDao extends CrudRepository<Company, Integer> {
+public interface CompanyDao extends CrudRepository<Company, Integer>{
 
-    List<Company> findByThreeCharsPrefix(@Param("PREFIX") String prefix);
+    @Query(nativeQuery = true)
+    List<Company> retrieveCompaniesByPhrase(@Param("PHRASE") String phrase);
 
-    List<Company> findByFewLetters(@Param("ARG") String letters);
-
+    @Query
+    List<Company> retrieveCompaniesWithNameLike(@Param("ARG") String arg);
 }
